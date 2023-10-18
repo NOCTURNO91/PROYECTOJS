@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProyectoJs</title>
+</head>
+    
+<body>
+    <b><del>Hola mundo</del></b><br><br>
+    <p>Regresa al <a href="./Ejemolo2/index.html">inicio</a> de la pagina</p>
+
+    Esta <em>palabra</em> tiene enfasis<br>
+    Esta <i>palabra</i> esta en cursiva <br>
+    Esta <strong>palabra</strong> es muy fuerte <br>
+    Esta <b>palabra</b> esta en negrita <br>
+    Esta <small>palabra</small> es pequeña <br>
+    Esta <del>palabra</del> esta tachada <br>
+    Esta <ins>palabra</ins> esta insertada <br>
+    Esta <u>palabra</u> esta subrayada <br>
+    Esta <mark>palabra</mark> esta marcada <br>
+    Esta palabra esta marcada <br>
+    La etiqueta &lt;br&gt; produce saltos de linea
+
+    //ejercicio 2
+
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma" style="color: red;">APAGADO</h1>
+
+    <script>
+        let elementoSegundoss = document.getElementById("tiempoElegido")
+    </script>
+
+
+
+    //ejemplo onclick 1
+
+    <button onclick="comenzarTiempo">alarma</button>
+    <script>
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000*5);
+        }
+
+        function tiempoCumplido(){
+            alert("Se acabo el tiempo amigo!");
+        }
+    </script>
+
+
+    //ejemplo onclick 2
+
+    <h2>Game Over</h2>
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+
+    <script>
+        let elementoSegundos = document.getElementById("tiempoElegido");
+        
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000 * elementoSegundos.value);
+        }
+        function tiempoCumplido(){
+            alert("fin del juego el tiempo ha terminado");
+        }
+    </script>
+
+    //ejemplo onclick 3
+
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h2 id="textoAlarma" style="color: red;">Game Over</h2>
+
+    <script>
+        let elementoSegundo = document.getElementById("tiempoElegido");
+        let elementoTextoAlarma = document.getElementById("textoAlarma");
+        
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000 * elementoSegundo.value);
+        }
+        function tiempoCumplido(){
+            elementoTextoAlarma.textContent = "Presione Star ";
+            elementoTextoAlarma.style.color = "green";
+
+        }
+    </script>
+
+    //alarma 2
+    <!--
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h2 id="textoAlarma" style="color: red;">Game Over</h2>
+    
+    <audio id="audioAlarma">
+        <source src="" type="audio/mpeg">
+        Sonido no habilitado
+
+    </audio>
+    <script>
+        let elementoSegundos = document.getElementById("tiempoElegido");
+        let elementoTextoAlarma = document.getElementById("textoAlarma");
+        let elementosonidoAlarma = document.getElementById("audioAlarma");
+        
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000 * elementoSegundos.value);
+        }
+        function tiempoCumplido(){
+            elementoTextoAlarma.textContent = "Presione Star";
+            elementoTextoAlarma.style.color = "green";
+            elementosonidoAlarma.play();
+
+        }
+    </script>
+
+    <script>
+        let elementoSegundos = document.getElementById("tiempoElegido");
+        let elementoTextoAlarma = document.getElementById("textoAlarma");
+        let elementoSonidoAlarma = document.getElementById("audioAlarma");
+        
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000 * elementoSegundos.value);
+        }
+        function tiempoCumplido(){
+            elementoTextoAlarma.style.color = "green";
+            elementoSonidoAlarma.play();
+        }
+
+        function comenzarReloj(){
+            setInterval(ticTac, 1000);
+        }
+
+        function ticTac(){
+            let tiempoActual = new Date();
+            let hora = String(tiempoActual.getHours()).padStart(2,0);
+            let minutos = String(tiempoActual.getMinutes()).padStart(2,0);
+            let segundos = String(tiempoActual.getSeconds()).padStart(2,0);
+
+            let textoHora = hora + ":" + minutos + ":" + segundos;
+            elementoTextoAlarma.textContent = textoHora;
+        }
+
+        
+    </script>-->
+
+    //TiempoAlarma
+    <!--
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma">00:00:00</h1>
+    
+    <audio id="audioAlarma">
+        <source src="" type="audio/mpeg">
+        Sonido no habilitado
+
+    </audio>
+    <script>
+        let elementoSegundos = document.getElementById("tiempoElegido");
+        let elementoTextoAlarma = document.getElementById("textoAlarma");
+        let elementoSonidoAlarma = document.getElementById("audioAlarma");
+        
+        function comenzarTiempo(){
+            setTimeout(tiempoCumplido, 1000 * elementoSegundos.value);
+        }
+        function tiempoCumplido(){
+            elementoTextoAlarma.style.color = "green";
+            elementoSonidoAlarma.play();
+        }
+
+        function comenzarReloj(){
+            setInterval(ticTac, 1000);
+        }
+
+        function ticTac(){
+            let tiempoActual = new Date();
+            let hora = String(tiempoActual.getHours()).padStart(2,0);
+            let minutos = String(tiempoActual.getMinutes()).padStart(2,0);
+            let segundos = String(tiempoActual.getSeconds()).padStart(2,0);
+
+            let textoHora = hora + ":" + minutos + ":" + segundos;
+            elementoTextoAlarma.textContent = textoHora;
+        }
+
+        
+    </script>-->
+
+    //suma numeros
+    <!--<p>Primer numero</p>
+    <input type="number" id="primerNumero">
+    <p>Segundo numero</p>
+    <input type="number" id="segundoNumero">
+    <button onclick="mostrarResultado()">calcular</button>
+    <h2 id="textoResultado"></h2>
+
+    <script>
+        function sumar(numero1, numero2){
+            resultado = +numero1 + +numero2;
+            return resultado;
+        }
+
+        function mostrarResultado(){
+            let elementoNumero1 = document.getElementById("primerNumero");
+            let elementoNumero2 = document.getElementById("segundoNumero");
+            let elementoTexto = document.getElementById("textoResultado");
+            let elementoNumero = sumar(elementoNumero1.value, elementoNumero2.value);
+
+            elementoTexto.textContent = elementoNumero;
+    
+            elementoNumero1.value = "";
+            elementoNumero2.value = "";
+        }
+    </script>-->
+
+    //Calcular combustible
+    <!--
+    <h1>&#9981; Calcular combustible</h1>
+     <p>Calcular cuantos litros vas a cargar</p>
+     <p>Kilometros: <input type="number" id="textoKm" value="10"></p>
+     <p><button onclick="calcularLitros();">Calcular combustible</button></p>
+     <p id="textoResultado"></p>
+
+     <script>
+    function calcularLitros(){
+    var elementoKm = document.getElementById("textoKm");
+    var textoKm = elementoKm.value;
+    var cantKm = Number(textoKm);
+
+    var cantLitros = cantKm / 8.8;
+
+    var resultado = document.getElementById("textoResultado");
+    resultado.textContent = "carga " + cantLitros + "litro de combustible";
+
+    elementoKm.value = "";
+}
+     </script>-->
+
+     //Numero aleatorio
+     <!--
+        <button onclick="crearAleatorio()">Dame un aleatorio</button>
+     <h2>Numero aleatorio: <span id="textoAleatorio">---</span></h2>
+
+     <script>
+        let elementoAleatorio = document.getElementById("textoAleatorio");
+
+        function crearAleatorio(){
+            elementoAleatorio.textContent = Math.floor(Math.random() * 10);
+        }
+     </script>
+     -->
+
+     //validador de datos 
+
+     <!--
+        <p>ingrese su edad</p>
+    <input type="number" id="textoEdad">
+    <button onclick="calcular()">enviar</button>
+
+    <h3>Puede beber alcohol</h3>
+    <p id="respuesta1">---</p>
+
+    <h3>Puede ingresar a la fiesta</h3>
+    <p id="respuesta2">---</p>
+
+    <h3>tiene entrada gratis</h3>
+    <p id="respuesta3">---</p>
+    
+        function calcular(){
+    let elementoRespuesta1 = document.getElementById("respuesta1");
+    let elementoRespuesta2 = document.getElementById("respuesta2");
+    let elementoRespuesta3 = document.getElementById("respuesta3");
+
+    let elementoEdad = document.getElementById("textoEdad");
+    let edad = elementoEdad.value;
+
+    let puedeBeber = edad >= 18;
+    elementoRespuesta1.textContent = puedeBeber;
+
+    let puedeIngresar = edad >= 18 && edad <= 30;
+    elementoRespuesta2.textContent = puedeIngresar;
+
+    let entradaGratis = edad == 20 || edad == 25;
+    elementoRespuesta3.textContent = entradaGratis;
+
+    elementoEdad.value = "";
+    puedeBeber.value = "";
+    entradaGratis.value = "";
+}
+     -->
+</body>
+</html>
